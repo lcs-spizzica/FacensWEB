@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="calc.js"></script>
+  <script src="filtrarArray.js"></script>
+  <script src="1.js"></script>
+  <script src="2.js"></script>
+  <script src="calcCustoCarro.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+  <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+  <!-- https://cdnjs.com/libraries/font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <h1>Exercicio 3</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-1">Multiplicado</th>
+        <th scope="col-1">x</th>
+        <th scope="col-1">Multiplicador</th>
+        <th scope="col-1">Resultado</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+  <h1>Exercicio 4 - Escolha um númera para exibir sua tabuada</h1>
+  <div class="row">
+    <div class="col-5">
+      <label for="input1" class="form-label">Ecolha um número para exibir sua tabuada</label>
+      <input type="number" class="form-control" id="input1" aria-describedby="emailHelp">
+    </div>
+    <div class="col-5">
+      <button type="button" class="btn btn-outline-primary mt-4" onclick="tabuadaUser()">Multiplicar</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <h1>Exercício 5 - Calculadora</h1>
+  <div class="row">
+    <div class="col">
+       <div class="mb-3">
+        <label>Operador matemático: </label>
+        <select name="opcs" id="lista">
+          <option value="1">Adição</option>
+          <option value="2">Subtração</option>
+          <option value="3">Multiplicação</option>
+          <option value="4">Divisão</option>
+        </select>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <label for="">Núm 1:</label>
+          <input type="number" id="number1">
+          <label for="">Núm 2:</label>
+          <input type="number" id="number2">
+          <div class="row text-center">
+            <div class="col mt-2">
+              <label for="">Resultado:</label>
+              <input type="text" id="resultadoCalc" disabled>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-primary mt-3" onclick="calculadora()">Calcular</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col">
+      <h2>Exercício 6 - Percorra o array [1,2,3,4,5,6,7,8,9,10] e exiba apenas os valores pares.</h2>
+      <button type="button" class="btn btn-primary mt-3 m-3" onclick="botaoFiltrar()">Filtrar</button>
+    </div>
+  </div>
+  <hr>
+
+<div class="row">
+  <h2>Exercício 7 - Calcular custo do carro</h2>
+
+<div class="col">
+ <label for="custoFabrica" class="form-label">Custo de fábrica</label>
+ <input type="number" class="form-control" id="custoFabrica">
+</div>
+
+ <div class="col">
+  <label for="percDistribuidor" class="form-label">% Distribuidor</label>
+  <input type="number" class="form-control" id="percDistribuidor">
+ </div>
+ 
+
+ <div class="col">
+  <label for="percImpostos" class="form-label">% Impostos</label>
+  <input type="number" class="form-control" id="percImpostos">
+ </div>
+ 
+
+ <div class="col">
+  <label for="valorfinal" class="form-label">Valor final</label>
+  <input type="text" class="form-control" id="valorfinal" readonly disabled>
+ </div>
+</div>
+
+<div class="row text-center mt-4">
+<div class="col text-center">
+  <button type="button" onclick="calcCustoCarro()" class="btn btn-primary">Calcular custo</button>
+</div>
+</div>
+<br>
+<br>
+
+ 
+
+
+  
+  
+    <script>
+      const num = 5
+      var tbody = document.getElementById('tbody')
+      tbody.innerHTML = ''
+
+      for (let i = 0; i <= 10; i++) {
+        console.log("entrou aqui!!!")
+
+        let multiplicar = 5 * i
+
+        var tr = document.createElement('tr')
+        var td1 = document.createElement('td')
+        var td2 = document.createElement('td')
+        var td3 = document.createElement('td')
+        var td4 = document.createElement('td')
+
+        var txt1 = document.createTextNode(i)
+        var txt2 = document.createTextNode('x')
+        var txt3 = document.createTextNode(num)
+        var txt4 = document.createTextNode(multiplicar)
+
+        td1.appendChild(txt1)
+        td2.appendChild(txt2)
+        td3.appendChild(txt3)
+        td4.appendChild(txt4)
+
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+        tr.appendChild(td4)
+
+        tbody.appendChild(tr)
+      }
+      </script>
+
+
+    <script>
+
+
+        function tabuadaUser() {
+          tbody.innerHTML = ''
+          let valorUsuario = document.getElementById('input1').value
+
+          for (let i = 0; i <= 10; i++) {
+
+            let multiplicar = valorUsuario * i
+
+            var tr = document.createElement('tr')
+            var td1 = document.createElement('td')
+            var td2 = document.createElement('td')
+            var td3 = document.createElement('td')
+            var td4 = document.createElement('td')
+
+            var txt1 = document.createTextNode(i)
+            var txt2 = document.createTextNode('x')
+            var txt3 = document.createTextNode(valorUsuario)
+            var txt4 = document.createTextNode(multiplicar)
+
+            td1.appendChild(txt1)
+            td2.appendChild(txt2)
+            td3.appendChild(txt3)
+            td4.appendChild(txt4)
+
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            tr.appendChild(td4)
+
+            tbody.appendChild(tr)
+
+          }
+
+
+        }
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script> -->
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+  </body>
+
+</html>
